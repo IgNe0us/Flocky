@@ -145,6 +145,7 @@ public class DonationController {
         String memberId = (String)session.getAttribute("SID");
         CommentMember commentMember = donationService.getMember(memberId);
         model.addAttribute("commentMember", commentMember);
+        model.addAttribute("SID", memberId);
 
         donationService.CommentAdd(memberId, donationCode, commentMember.getMemberName(), commentContent);
 

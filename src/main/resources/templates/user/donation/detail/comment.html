@@ -192,7 +192,13 @@
                 alert('10글자 이상만 등록이 가능합니다!');
                 return false;
             }else{
-                $('#commentAddForm').submit();
+                let SID = '[[${SID}]]';
+                console.log(SID);
+                if(SID == '' || SID == null || typeof SID == 'undefined' || SID == 'noSession'){
+                    alert('댓글 기능은 로그인 하셔야 가능합니다!');
+                }else{
+                    $('#commentAddForm').submit();
+                }
             }
             //
         });
